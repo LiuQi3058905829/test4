@@ -1,0 +1,45 @@
+##### Written on 2024/06/13 15:17:35 ###############################
+
+
+##### INFO ##################################################
+
+Current device : 
+	PGL22G-6MBG324
+
+Top Module : 
+	AorB
+
+Constraint File(s) : 
+	D:/pds/project/test-1/AorB/source/AorB.fdc
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 2 critical warning(s), 0 warning(s), out of 17 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+define_attribute {p:A} {PAP_IO_LOC} {H14}
+	C: ConstraintEditor-2002: [D:/pds/project/test-1/AorB/source/AorB.fdc(line number: 9)] | Port A has been placed at location H14, whose type is share pin.
+
+define_attribute {p:B} {PAP_IO_LOC} {G13}
+	C: ConstraintEditor-2002: [D:/pds/project/test-1/AorB/source/AorB.fdc(line number: 14)] | Port B has been placed at location G13, whose type is share pin.
+
+
+Constraints with issues:
+********************************************
+
+
+Issues without commands:
+********************************************
+
+
+Unconstrained ports:
+********************************************
+
+
+Constraints with matching wildcard expressions:
+********************************************
+
+

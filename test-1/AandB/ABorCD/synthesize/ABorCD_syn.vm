@@ -1,0 +1,96 @@
+//
+// Generated (version 2022.2-SP1-Lite<build 132640>) at Wed Jun 12 17:39:00 2024
+//
+
+module gate74LS00
+(
+    input A1,
+    input A2,
+    input B1,
+    input B2,
+    output N4_inv
+);
+
+    GTP_LUT4 /* N4 */ #(
+            .INIT(16'b1111100010001000))
+        N4 (
+            .Z (N4_inv),
+            .I0 (A1),
+            .I1 (B1),
+            .I2 (A2),
+            .I3 (B2));
+	// LUT = (I0&I1)|(I2&I3) ;
+
+
+endmodule
+
+
+module ABorCD
+(
+    input A,
+    input B,
+    input C,
+    input D,
+    output F
+);
+    wire \U1/N4_inv_rnmt ;
+    wire nt_A;
+    wire nt_B;
+    wire nt_C;
+    wire nt_D;
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* A_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        A_ibuf (
+            .O (nt_A),
+            .I (A));
+	// ../source/ABorCD.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J14", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* B_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        B_ibuf (
+            .O (nt_B),
+            .I (B));
+	// ../source/ABorCD.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* C_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        C_ibuf (
+            .O (nt_C),
+            .I (C));
+	// ../source/ABorCD.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H13", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* D_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        D_ibuf (
+            .O (nt_D),
+            .I (D));
+	// ../source/ABorCD.v:2
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="N15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_DRIVE="2", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* F_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        F_obuf (
+            .O (F),
+            .I (\U1/N4_inv_rnmt ));
+	// ../source/ABorCD.v:3
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+    gate74LS00 U1 (
+            .N4_inv (\U1/N4_inv_rnmt ),
+            .A1 (nt_A),
+            .A2 (nt_C),
+            .B1 (nt_B),
+            .B2 (nt_D));
+	// ../source/ABorCD.v:5
+
+
+endmodule
+

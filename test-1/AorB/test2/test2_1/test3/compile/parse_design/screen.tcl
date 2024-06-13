@@ -1,0 +1,1 @@
+.rtl_screen -top_module {test3} -include_path {<D:/pdsproject/project/project1/AorB/test2/test2_1/test3>} -design_files {<D:/pdsproject/project/project1/AorB/test2/test2_1/test3/source/test3.v|work><D:/pdsproject/project/project1/AorB/test2/test2_1/test3/source/gate74LS74.v|work><D:/pdsproject/project/project1/AorB/test2/test2_1/test3/source/gate74LS00.v|work>}

@@ -1,0 +1,70 @@
+//
+// Generated (version 2022.2-SP1-Lite<build 132640>) at Wed Jun 12 17:52:34 2024
+//
+
+module gate74LS00
+(
+    input nt_A,
+    input nt_B,
+    output N0_inv
+);
+
+    GTP_LUT2 /* N0 */ #(
+            .INIT(4'b0110))
+        N0 (
+            .Z (N0_inv),
+            .I0 (nt_A),
+            .I1 (nt_B));
+	// LUT = (I0&~I1)|(~I0&I1) ;
+
+
+endmodule
+
+
+module cece
+(
+    input A,
+    input B,
+    output F
+);
+    wire \U2/N0_inv_rnmt ;
+    wire nt_A;
+    wire nt_B;
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* A_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        A_ibuf (
+            .O (nt_A),
+            .I (A));
+	// ../source/cece.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J14", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* B_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        B_ibuf (
+            .O (nt_B),
+            .I (B));
+	// ../source/cece.v:2
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="N15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_DRIVE="2", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* F_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        F_obuf (
+            .O (F),
+            .I (\U2/N0_inv_rnmt ));
+	// ../source/cece.v:3
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+    gate74LS00 U2 (
+            .N0_inv (\U2/N0_inv_rnmt ),
+            .nt_A (nt_A),
+            .nt_B (nt_B));
+	// ../source/cece.v:6
+
+
+endmodule
+

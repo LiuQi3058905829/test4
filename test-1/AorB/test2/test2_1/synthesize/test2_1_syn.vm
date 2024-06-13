@@ -1,0 +1,105 @@
+//
+// Generated (version 2022.2-SP1-Lite<build 132640>) at Wed May 15 16:32:57 2024
+//
+
+module gate74LS20
+(
+    input nt_A,
+    input nt_B,
+    input nt_C,
+    output N2,
+    output N6
+);
+
+    GTP_LUT3 /* N2_1_inv */ #(
+            .INIT(8'b01101001))
+        N2_1_inv (
+            .Z (N6),
+            .I0 (nt_A),
+            .I1 (nt_B),
+            .I2 (nt_C));
+	// LUT = (~I0&~I1&~I2)|(I0&I1&~I2)|(I0&~I1&I2)|(~I0&I1&I2) ;
+
+    GTP_LUT3 /* N2_3 */ #(
+            .INIT(8'b10010110))
+        N2_3 (
+            .Z (N2),
+            .I0 (nt_A),
+            .I1 (nt_B),
+            .I2 (nt_C));
+	// LUT = (I0&~I1&~I2)|(~I0&I1&~I2)|(~I0&~I1&I2)|(I0&I1&I2) ;
+
+
+endmodule
+
+
+module test2_1
+(
+    input A,
+    input B,
+    input C,
+    output Fev,
+    output Fodd
+);
+    wire \U3/N2_rnmt ;
+    wire \U3/N6_rnmt ;
+    wire nt_A;
+    wire nt_B;
+    wire nt_C;
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* A_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        A_ibuf (
+            .O (nt_A),
+            .I (A));
+	// ../source/test2_1.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J14", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* B_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        B_ibuf (
+            .O (nt_B),
+            .I (B));
+	// ../source/test2_1.v:2
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* C_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        C_ibuf (
+            .O (nt_C),
+            .I (C));
+	// ../source/test2_1.v:2
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K18", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_DRIVE="2", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* Fev_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        Fev_obuf (
+            .O (Fev),
+            .I (\U3/N6_rnmt ));
+	// ../source/test2_1.v:3
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="N15", PAP_IO_VCCIO="1.2", PAP_IO_STANDARD="LVCMOS12", PAP_IO_DRIVE="2", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* Fodd_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        Fodd_obuf (
+            .O (Fodd),
+            .I (\U3/N2_rnmt ));
+	// ../source/test2_1.v:3
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+    gate74LS20 U3 (
+            .N2 (\U3/N2_rnmt ),
+            .N6 (\U3/N6_rnmt ),
+            .nt_A (nt_A),
+            .nt_B (nt_B),
+            .nt_C (nt_C));
+	// ../source/test2_1.v:7
+
+
+endmodule
+

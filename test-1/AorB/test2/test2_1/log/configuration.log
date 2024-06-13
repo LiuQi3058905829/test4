@@ -1,0 +1,179 @@
+[Info] [2024-5-15 16:35:01] /***************************Start Configuration***************************/
+[Info] [2024-5-15 16:35:01] Path: D:/pds/bin
+[Info] [2024-5-15 16:35:01] Version: 132640
+[Info] [2024-5-15 16:35:02] Current Path: D:/pdsproject/project/project1/AorB/test2/test2_1
+[Info] [2024-5-15 16:35:02] PDS Dir Path: D:/pdsproject/project/project1/AorB/test2/test2_1
+[Info] [2024-5-15 16:35:11] Configuration is not connect with server. connect first then scan chain.
+[Debug] [2024-5-15 16:35:11] Client Local host name:redmi314
+[Debug] [2024-5-15 16:35:11] Client Local Address:192.168.198.13
+[Debug] [2024-5-15 16:35:11] Server Address:127.0.0.1, Port:65420
+[Info] [2024-5-15 16:35:13] Connect OK, Server: 127.0.0.1  Port: 65420
+[Debug] [2024-5-15 16:35:13] Finish.
+[Info] [2024-5-15 16:35:13] Connect server succeeded
+[Debug] [2024-5-15 16:35:13] Send RPC:1
+[Debug] [2024-5-15 16:35:13] Send cmd [check version information:40004] OK
+[Debug] [2024-5-15 16:35:14] Send RPC:2
+[Debug] [2024-5-15 16:35:14] Send cmd [get_cable_paras:40010] OK
+[Debug] [2024-5-15 16:35:14] Begin to send initialize chain cmd...
+[Debug] [2024-5-15 16:35:14] Send RPC:3
+[Debug] [2024-5-15 16:35:14] Send cmd [Open config cable:20001] OK
+[Debug] [2024-5-15 16:35:14] End to send initialize chain cmd.
+[Debug] [2024-5-15 16:35:14] COMMAND[check version information] execute successfully, takes 0.6 secs.
+[Debug] [2024-5-15 16:35:15] COMMAND[get_cable_paras] execute successfully, takes 1.3 secs.
+[Debug] [2024-5-15 16:35:16] begin the exec of open cable cmd...
+[Debug] [2024-5-15 16:35:16] Begin to deal with chain from server...
+[Debug] [2024-5-15 16:35:16] Begin to set user chain...
+[Debug] [2024-5-15 16:35:16] End to set user chain.
+[Debug] [2024-5-15 16:35:16] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 16:35:16] End to update graphic item and tree item ...
+[Info] [2024-5-15 16:35:39] set OpenLastPath: D:/pdsproject/project/project1/AorB/test2/test2_1/generate_bitstream/test2_1.sbit
+[Debug] [2024-5-15 16:35:39] begin to get device info from CFG file...
+[Debug] [2024-5-15 16:35:39] end to get device info from CFG file...
+[Debug] [2024-5-15 16:35:40] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 16:35:40] End to update graphic item and tree item ...
+[Debug] [2024-5-15 16:35:40] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 16:35:40] End to update graphic item and tree item ...
+[Debug] [2024-5-15 16:35:40] End to deal wiht chain from server.
+[Debug] [2024-5-15 16:35:40] end the exec of open cable cmd.
+[Debug] [2024-5-15 16:35:40] COMMAND[Open config cable] execute successfully, takes 25.6 secs.
+[Debug] [2024-5-15 16:35:41] Begin to send programming cmd...
+[Debug] [2024-5-15 16:35:41] Send RPC:4
+[Debug] [2024-5-15 16:35:41] Begin to send program data.
+[Debug] [2024-5-15 16:35:41] End to send program data.
+[Debug] [2024-5-15 16:35:41] Send cmd [Program:20002] OK
+[Debug] [2024-5-15 16:35:41] The value of Progress is 6
+[Debug] [2024-5-15 16:35:41] The value of Progress is 10
+[Debug] [2024-5-15 16:35:41] The value of Progress is 15
+[Debug] [2024-5-15 16:35:41] The value of Progress is 20
+[Debug] [2024-5-15 16:35:41] The value of Progress is 25
+[Debug] [2024-5-15 16:35:41] The value of Progress is 30
+[Debug] [2024-5-15 16:35:41] The value of Progress is 35
+[Debug] [2024-5-15 16:35:41] The value of Progress is 40
+[Debug] [2024-5-15 16:35:41] The value of Progress is 45
+[Debug] [2024-5-15 16:35:41] The value of Progress is 50
+[Debug] [2024-5-15 16:35:41] The value of Progress is 55
+[Debug] [2024-5-15 16:35:41] The value of Progress is 60
+[Debug] [2024-5-15 16:35:41] The value of Progress is 65
+[Debug] [2024-5-15 16:35:41] The value of Progress is 70
+[Debug] [2024-5-15 16:35:41] The value of Progress is 75
+[Debug] [2024-5-15 16:35:41] The value of Progress is 80
+[Debug] [2024-5-15 16:35:41] The value of Progress is 85
+[Debug] [2024-5-15 16:35:42] The value of Progress is 90
+[Debug] [2024-5-15 16:35:42] The value of Progress is 95
+[Debug] [2024-5-15 16:35:42] The value of Progress is 100
+[Debug] [2024-5-15 16:35:42] COMMAND[Program] execute successfully, takes 1.0 secs.
+[Debug] [2024-5-15 16:35:42] End to send programming cmd.
+[Debug] [2024-5-15 17:17:56] Begin to send initialize chain cmd...
+[Debug] [2024-5-15 17:17:56] Send RPC:5
+[Debug] [2024-5-15 17:17:56] Send cmd [Open config cable:20001] OK
+[Debug] [2024-5-15 17:17:56] End to send initialize chain cmd.
+[Debug] [2024-5-15 17:17:56] begin the exec of open cable cmd...
+[Debug] [2024-5-15 17:17:56] Begin to deal with chain from server...
+[Debug] [2024-5-15 17:17:56] Begin to set user chain...
+[Debug] [2024-5-15 17:17:56] End to set user chain.
+[Debug] [2024-5-15 17:17:56] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:17:56] End to update graphic item and tree item ...
+[Info] [2024-5-15 17:18:01] set OpenLastPath: D:/pdsproject/project/project1/AorB/test2/test2_1/generate_bitstream/test2_1.sbit
+[Debug] [2024-5-15 17:18:01] begin to get device info from CFG file...
+[Debug] [2024-5-15 17:18:01] end to get device info from CFG file...
+[Debug] [2024-5-15 17:18:01] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:18:01] End to update graphic item and tree item ...
+[Debug] [2024-5-15 17:18:01] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:18:01] End to update graphic item and tree item ...
+[Debug] [2024-5-15 17:18:01] End to deal wiht chain from server.
+[Debug] [2024-5-15 17:18:01] end the exec of open cable cmd.
+[Debug] [2024-5-15 17:18:01] COMMAND[Open config cable] execute successfully, takes 5.5 secs.
+[Debug] [2024-5-15 17:18:02] Begin to send programming cmd...
+[Debug] [2024-5-15 17:18:02] Send RPC:6
+[Debug] [2024-5-15 17:18:02] Begin to send program data.
+[Debug] [2024-5-15 17:18:02] End to send program data.
+[Debug] [2024-5-15 17:18:02] Send cmd [Program:20002] OK
+[Debug] [2024-5-15 17:18:03] The value of Progress is 6
+[Debug] [2024-5-15 17:18:03] The value of Progress is 10
+[Debug] [2024-5-15 17:18:03] The value of Progress is 15
+[Debug] [2024-5-15 17:18:03] The value of Progress is 20
+[Debug] [2024-5-15 17:18:03] The value of Progress is 25
+[Debug] [2024-5-15 17:18:03] The value of Progress is 30
+[Debug] [2024-5-15 17:18:03] The value of Progress is 35
+[Debug] [2024-5-15 17:18:03] The value of Progress is 40
+[Debug] [2024-5-15 17:18:03] The value of Progress is 45
+[Debug] [2024-5-15 17:18:03] The value of Progress is 50
+[Debug] [2024-5-15 17:18:03] The value of Progress is 55
+[Debug] [2024-5-15 17:18:03] The value of Progress is 60
+[Debug] [2024-5-15 17:18:03] The value of Progress is 65
+[Debug] [2024-5-15 17:18:03] The value of Progress is 70
+[Debug] [2024-5-15 17:18:03] The value of Progress is 75
+[Debug] [2024-5-15 17:18:03] The value of Progress is 80
+[Debug] [2024-5-15 17:18:03] The value of Progress is 85
+[Debug] [2024-5-15 17:18:03] The value of Progress is 90
+[Debug] [2024-5-15 17:18:03] The value of Progress is 95
+[Debug] [2024-5-15 17:18:03] The value of Progress is 100
+[Debug] [2024-5-15 17:18:03] COMMAND[Program] execute successfully, takes 1.0 secs.
+[Debug] [2024-5-15 17:18:03] End to send programming cmd.
+[Info] [2024-5-15 17:18:58] /***************************End Configration***************************/
+[Info] [2024-5-15 17:19:09] /***************************Start Configuration***************************/
+[Info] [2024-5-15 17:19:09] Path: D:/pds/bin
+[Info] [2024-5-15 17:19:09] Version: 132640
+[Info] [2024-5-15 17:19:10] Current Path: D:/pdsproject/project/project1/AorB/test2/test2_1
+[Info] [2024-5-15 17:19:10] PDS Dir Path: D:/pdsproject/project/project1/AorB/test2/test2_1
+[Info] [2024-5-15 17:19:16] Configuration is not connect with server. connect first then scan chain.
+[Debug] [2024-5-15 17:19:16] Client Local host name:redmi314
+[Debug] [2024-5-15 17:19:16] Client Local Address:192.168.198.13
+[Debug] [2024-5-15 17:19:16] Server Address:127.0.0.1, Port:65420
+[Info] [2024-5-15 17:19:18] Connect OK, Server: 127.0.0.1  Port: 65420
+[Debug] [2024-5-15 17:19:18] Finish.
+[Info] [2024-5-15 17:19:18] Connect server succeeded
+[Debug] [2024-5-15 17:19:18] Send RPC:1
+[Debug] [2024-5-15 17:19:18] Send cmd [check version information:40004] OK
+[Debug] [2024-5-15 17:19:19] Send RPC:2
+[Debug] [2024-5-15 17:19:19] Send cmd [get_cable_paras:40010] OK
+[Debug] [2024-5-15 17:19:19] Begin to send initialize chain cmd...
+[Debug] [2024-5-15 17:19:19] Send RPC:3
+[Debug] [2024-5-15 17:19:19] Send cmd [Open config cable:20001] OK
+[Debug] [2024-5-15 17:19:19] End to send initialize chain cmd.
+[Debug] [2024-5-15 17:19:19] COMMAND[check version information] execute successfully, takes 0.7 secs.
+[Debug] [2024-5-15 17:19:20] COMMAND[get_cable_paras] execute successfully, takes 1.3 secs.
+[Debug] [2024-5-15 17:19:21] begin the exec of open cable cmd...
+[Debug] [2024-5-15 17:19:21] Begin to deal with chain from server...
+[Debug] [2024-5-15 17:19:21] Begin to set user chain...
+[Debug] [2024-5-15 17:19:21] End to set user chain.
+[Debug] [2024-5-15 17:19:21] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:19:21] End to update graphic item and tree item ...
+[Info] [2024-5-15 17:19:36] set OpenLastPath: D:/pdsproject/project/project1/AorB/test2/generate_bitstream/test2.sbit
+[Debug] [2024-5-15 17:19:36] begin to get device info from CFG file...
+[Debug] [2024-5-15 17:19:36] end to get device info from CFG file...
+[Debug] [2024-5-15 17:19:36] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:19:36] End to update graphic item and tree item ...
+[Debug] [2024-5-15 17:19:36] Begin to update graphic item and tree item ...
+[Debug] [2024-5-15 17:19:36] End to update graphic item and tree item ...
+[Debug] [2024-5-15 17:19:36] End to deal wiht chain from server.
+[Debug] [2024-5-15 17:19:36] end the exec of open cable cmd.
+[Debug] [2024-5-15 17:19:36] COMMAND[Open config cable] execute successfully, takes 17.3 secs.
+[Debug] [2024-5-15 17:19:40] Begin to send programming cmd...
+[Debug] [2024-5-15 17:19:40] Send RPC:4
+[Debug] [2024-5-15 17:19:40] Begin to send program data.
+[Debug] [2024-5-15 17:19:40] End to send program data.
+[Debug] [2024-5-15 17:19:40] Send cmd [Program:20002] OK
+[Debug] [2024-5-15 17:19:40] The value of Progress is 6
+[Debug] [2024-5-15 17:19:40] The value of Progress is 10
+[Debug] [2024-5-15 17:19:40] The value of Progress is 15
+[Debug] [2024-5-15 17:19:40] The value of Progress is 20
+[Debug] [2024-5-15 17:19:40] The value of Progress is 25
+[Debug] [2024-5-15 17:19:40] The value of Progress is 30
+[Debug] [2024-5-15 17:19:40] The value of Progress is 35
+[Debug] [2024-5-15 17:19:40] The value of Progress is 40
+[Debug] [2024-5-15 17:19:41] The value of Progress is 45
+[Debug] [2024-5-15 17:19:41] The value of Progress is 50
+[Debug] [2024-5-15 17:19:41] The value of Progress is 55
+[Debug] [2024-5-15 17:19:41] The value of Progress is 60
+[Debug] [2024-5-15 17:19:41] The value of Progress is 65
+[Debug] [2024-5-15 17:19:41] The value of Progress is 70
+[Debug] [2024-5-15 17:19:41] The value of Progress is 75
+[Debug] [2024-5-15 17:19:41] The value of Progress is 80
+[Debug] [2024-5-15 17:19:41] The value of Progress is 85
+[Debug] [2024-5-15 17:19:41] The value of Progress is 90
+[Debug] [2024-5-15 17:19:41] The value of Progress is 95
+[Debug] [2024-5-15 17:19:41] The value of Progress is 100
+[Debug] [2024-5-15 17:19:41] COMMAND[Program] execute successfully, takes 0.9 secs.
+[Debug] [2024-5-15 17:19:41] End to send programming cmd.
+[Info] [2024-5-15 17:22:02] /***************************End Configration***************************/

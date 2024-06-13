@@ -1,0 +1,1 @@
+.rtl_screen -top_module {cece} -include_path {<C:/Users/67416/123/abc/11>} -design_files {<C:/Users/67416/123/abc/11/source/cece.v|work><C:/Users/67416/123/abc/source/gate74LS00.v|work>}

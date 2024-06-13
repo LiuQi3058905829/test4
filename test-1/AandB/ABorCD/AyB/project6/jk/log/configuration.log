@@ -1,0 +1,66 @@
+[Info] [2024-6-12 16:42:55] /***************************Start Configuration***************************/
+[Info] [2024-6-12 16:42:55] Path: D:/pds/bin
+[Info] [2024-6-12 16:42:55] Version: 132640
+[Info] [2024-6-12 16:42:56] Current Path: D:/pdsproject/project/project1/AorB/test2/test2_1/AandB/ABorCD/AyB/project6/jk
+[Info] [2024-6-12 16:42:56] PDS Dir Path: D:/pdsproject/project/project1/AorB/test2/test2_1/AandB/ABorCD/AyB/project6/jk
+[Info] [2024-6-12 16:44:06] Configuration is not connect with server. connect first then scan chain.
+[Debug] [2024-6-12 16:44:07] Client Local host name:redmi314
+[Debug] [2024-6-12 16:44:07] Client Local Address:192.168.104.13
+[Debug] [2024-6-12 16:44:07] Server Address:127.0.0.1, Port:65420
+[Info] [2024-6-12 16:44:09] Connect OK, Server: 127.0.0.1  Port: 65420
+[Debug] [2024-6-12 16:44:09] Finish.
+[Info] [2024-6-12 16:44:09] Connect server succeeded
+[Debug] [2024-6-12 16:44:09] Send RPC:1
+[Debug] [2024-6-12 16:44:09] Send cmd [check version information:40004] OK
+[Debug] [2024-6-12 16:44:09] Send RPC:2
+[Debug] [2024-6-12 16:44:09] Send cmd [get_cable_paras:40010] OK
+[Debug] [2024-6-12 16:44:09] Begin to send initialize chain cmd...
+[Debug] [2024-6-12 16:44:09] Send RPC:3
+[Debug] [2024-6-12 16:44:09] Send cmd [Open config cable:20001] OK
+[Debug] [2024-6-12 16:44:09] End to send initialize chain cmd.
+[Debug] [2024-6-12 16:44:09] COMMAND[check version information] execute successfully, takes 0.4 secs.
+[Debug] [2024-6-12 16:44:10] COMMAND[get_cable_paras] execute successfully, takes 0.9 secs.
+[Debug] [2024-6-12 16:44:11] begin the exec of open cable cmd...
+[Debug] [2024-6-12 16:44:11] Begin to deal with chain from server...
+[Debug] [2024-6-12 16:44:11] Begin to set user chain...
+[Debug] [2024-6-12 16:44:11] End to set user chain.
+[Debug] [2024-6-12 16:44:11] Begin to update graphic item and tree item ...
+[Debug] [2024-6-12 16:44:11] End to update graphic item and tree item ...
+[Info] [2024-6-12 16:44:13] set OpenLastPath: D:/pdsproject/project/project1/AorB/test2/test2_1/AandB/ABorCD/AyB/project6/jk/generate_bitstream/jk.sbit
+[Debug] [2024-6-12 16:44:13] begin to get device info from CFG file...
+[Debug] [2024-6-12 16:44:13] end to get device info from CFG file...
+[Debug] [2024-6-12 16:44:13] Begin to update graphic item and tree item ...
+[Debug] [2024-6-12 16:44:13] End to update graphic item and tree item ...
+[Debug] [2024-6-12 16:44:13] Begin to update graphic item and tree item ...
+[Debug] [2024-6-12 16:44:13] End to update graphic item and tree item ...
+[Debug] [2024-6-12 16:44:13] End to deal wiht chain from server.
+[Debug] [2024-6-12 16:44:13] end the exec of open cable cmd.
+[Debug] [2024-6-12 16:44:13] COMMAND[Open config cable] execute successfully, takes 3.8 secs.
+[Debug] [2024-6-12 16:44:18] Begin to send programming cmd...
+[Debug] [2024-6-12 16:44:18] Send RPC:4
+[Debug] [2024-6-12 16:44:18] Begin to send program data.
+[Debug] [2024-6-12 16:44:18] End to send program data.
+[Debug] [2024-6-12 16:44:18] Send cmd [Program:20002] OK
+[Debug] [2024-6-12 16:44:18] The value of Progress is 6
+[Debug] [2024-6-12 16:44:18] The value of Progress is 10
+[Debug] [2024-6-12 16:44:18] The value of Progress is 15
+[Debug] [2024-6-12 16:44:18] The value of Progress is 20
+[Debug] [2024-6-12 16:44:18] The value of Progress is 25
+[Debug] [2024-6-12 16:44:18] The value of Progress is 30
+[Debug] [2024-6-12 16:44:18] The value of Progress is 35
+[Debug] [2024-6-12 16:44:19] The value of Progress is 40
+[Debug] [2024-6-12 16:44:19] The value of Progress is 45
+[Debug] [2024-6-12 16:44:19] The value of Progress is 50
+[Debug] [2024-6-12 16:44:19] The value of Progress is 55
+[Debug] [2024-6-12 16:44:19] The value of Progress is 60
+[Debug] [2024-6-12 16:44:19] The value of Progress is 65
+[Debug] [2024-6-12 16:44:19] The value of Progress is 70
+[Debug] [2024-6-12 16:44:19] The value of Progress is 75
+[Debug] [2024-6-12 16:44:19] The value of Progress is 80
+[Debug] [2024-6-12 16:44:19] The value of Progress is 85
+[Debug] [2024-6-12 16:44:19] The value of Progress is 90
+[Debug] [2024-6-12 16:44:19] The value of Progress is 95
+[Debug] [2024-6-12 16:44:19] The value of Progress is 100
+[Debug] [2024-6-12 16:44:19] COMMAND[Program] execute successfully, takes 0.9 secs.
+[Debug] [2024-6-12 16:44:19] End to send programming cmd.
+[Info] [2024-6-12 16:47:39] /***************************End Configration***************************/
