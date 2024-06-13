@@ -1,0 +1,1 @@
+.rtl_screen -top_module {NHJSQ} -include_path {<C:/Users/r9000/project1/project>} -design_files {<C:/Users/r9000/project1/project/source/NHJSQ.v|work><C:/Users/r9000/project1/project/source/gate74LS194.v|work><C:/Users/r9000/project1/project/source/gate74LS20.v|work><C:/Users/r9000/project1/project/source/gate74LS00.v|work>}

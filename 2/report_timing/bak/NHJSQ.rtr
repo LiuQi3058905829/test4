@@ -1,0 +1,1054 @@
+
+----------------------------------------------------------------------------------------------------
+| Tool Version : Fabric Compiler (version 2022.2-SP1-Lite <build 132640>)
+| Date         : Wed Jun  5 17:17:24 2024
+| Design       : NHJSQ
+| Device       : PGL22G
+| Speed Grade  : -6
+| Package      : MBG324
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+| Timing Models: Production
+| Tcl Command  : report_timing 
+----------------------------------------------------------------------------------------------------
+
+Timing analysis mode : multi corner
+
+ Clock Summary:                                                                                       
+******************************************************************************************************
+                                                                           Clock   Non-clock          
+ Clock                    Period       Waveform       Type                 Loads       Loads  Sources 
+------------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK              1000.000     {0 500}        Declared                14           0  {exCLK} 
+======================================================================================================
+
+ Clock Groups:                                                                                      
+****************************************************************************************************
+ Clock Group                   Group Type                 Clocks                                    
+----------------------------------------------------------------------------------------------------
+ Inferred_clock_group_0        asynchronous               NHJSQ|exCLK                               
+====================================================================================================
+
+ Performance Summary:                                                                               
+****************************************************************************************************
+                              Requested       Estimated      Requested      Estimated               
+ Clock                        Frequency       Frequency      Period         Period             Slack
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK                  1.000 MHz     287.026 MHz       1000.000          3.484        996.516
+====================================================================================================
+
+Design Summary : All Constraints Met.
+
+Setup Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK            NHJSQ|exCLK                996.516       0.000              0             54
+====================================================================================================
+
+Hold Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK            NHJSQ|exCLK                  0.440       0.000              0             54
+====================================================================================================
+
+Recovery Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Removal Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Minimum Pulse Width Summary(Slow Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK                                       499.380       0.000              0             14
+====================================================================================================
+
+Setup Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK            NHJSQ|exCLK                997.279       0.000              0             54
+====================================================================================================
+
+Hold Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK            NHJSQ|exCLK                  0.357       0.000              0             54
+====================================================================================================
+
+Recovery Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Removal Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Minimum Pulse Width Summary(Fast Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ NHJSQ|exCLK                                       499.700       0.000              0             14
+====================================================================================================
+
+Slow Corner
+****************************************************************************************************
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[22]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.051  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.279
+  Launch Clock Delay      :  3.952
+  Clock Pessimism Removal :  0.622
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.814       3.952         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.261       4.213 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.567       4.780         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.387       5.167 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.468       5.635         _N55             
+ CLMA_126_172/Y0                   td                    0.387       6.022 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.548       6.570         N42              
+ CLMA_130_152/RSCO                 td                    0.118       6.688 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.688         ntR4             
+ CLMA_130_156/RSCO                 td                    0.089       6.777 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.777         ntR3             
+ CLMA_130_160/RSCO                 td                    0.089       6.866 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.866         ntR2             
+ CLMA_130_164/RSCO                 td                    0.089       6.955 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.955         ntR1             
+ CLMA_130_168/RSCO                 td                    0.089       7.044 r       CLKcount[20]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       7.044         ntR0             
+ CLMA_130_172/RSCI                                                         r       CLKcount[22]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   7.044         Logic Levels: 7  
+                                                                                   Logic: 1.509ns(48.803%), Route: 1.583ns(51.197%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916    1000.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054    1001.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754    1001.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.490    1003.279         ntclkbufg_0      
+ CLMA_130_172/CLK                                                          r       CLKcount[22]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.622    1003.901                          
+ clock uncertainty                                      -0.050    1003.851                          
+
+ Setup time                                             -0.291    1003.560                          
+
+ Data required time                                               1003.560                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1003.560                          
+ Data arrival time                                                   7.044                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.516                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[24]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.051  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.279
+  Launch Clock Delay      :  3.952
+  Clock Pessimism Removal :  0.622
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.814       3.952         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.261       4.213 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.567       4.780         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.387       5.167 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.468       5.635         _N55             
+ CLMA_126_172/Y0                   td                    0.387       6.022 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.548       6.570         N42              
+ CLMA_130_152/RSCO                 td                    0.118       6.688 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.688         ntR4             
+ CLMA_130_156/RSCO                 td                    0.089       6.777 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.777         ntR3             
+ CLMA_130_160/RSCO                 td                    0.089       6.866 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.866         ntR2             
+ CLMA_130_164/RSCO                 td                    0.089       6.955 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.955         ntR1             
+ CLMA_130_168/RSCO                 td                    0.089       7.044 r       CLKcount[20]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       7.044         ntR0             
+ CLMA_130_172/RSCI                                                         r       CLKcount[24]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   7.044         Logic Levels: 7  
+                                                                                   Logic: 1.509ns(48.803%), Route: 1.583ns(51.197%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916    1000.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054    1001.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754    1001.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.490    1003.279         ntclkbufg_0      
+ CLMA_130_172/CLK                                                          r       CLKcount[24]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.622    1003.901                          
+ clock uncertainty                                      -0.050    1003.851                          
+
+ Setup time                                             -0.291    1003.560                          
+
+ Data required time                                               1003.560                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1003.560                          
+ Data arrival time                                                   7.044                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.516                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[18]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.046  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.284
+  Launch Clock Delay      :  3.952
+  Clock Pessimism Removal :  0.622
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.814       3.952         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.261       4.213 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.567       4.780         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.387       5.167 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.468       5.635         _N55             
+ CLMA_126_172/Y0                   td                    0.387       6.022 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.548       6.570         N42              
+ CLMA_130_152/RSCO                 td                    0.118       6.688 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.688         ntR4             
+ CLMA_130_156/RSCO                 td                    0.089       6.777 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.777         ntR3             
+ CLMA_130_160/RSCO                 td                    0.089       6.866 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.866         ntR2             
+ CLMA_130_164/RSCO                 td                    0.089       6.955 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       6.955         ntR1             
+ CLMA_130_168/RSCI                                                         r       CLKcount[18]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   6.955         Logic Levels: 6  
+                                                                                   Logic: 1.420ns(47.286%), Route: 1.583ns(52.714%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916    1000.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054    1001.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754    1001.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.495    1003.284         ntclkbufg_0      
+ CLMA_130_168/CLK                                                          r       CLKcount[18]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.622    1003.906                          
+ clock uncertainty                                      -0.050    1003.856                          
+
+ Setup time                                             -0.291    1003.565                          
+
+ Data required time                                               1003.565                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1003.565                          
+ Data arrival time                                                   6.955                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.610                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[0]/opit_0_L5Q_perm/CLK
+Endpoint    : CLKcount[0]/opit_0_L5Q_perm/L4
+Path Group  : NHJSQ|exCLK
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.934
+  Launch Clock Delay      :  3.276
+  Clock Pessimism Removal :  -0.658
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916       0.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054       1.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754       1.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.487       3.276         ntclkbufg_0      
+ CLMS_126_173/CLK                                                          r       CLKcount[0]/opit_0_L5Q_perm/CLK
+
+ CLMS_126_173/Q0                   tco                   0.218       3.494 f       CLKcount[0]/opit_0_L5Q_perm/Q
+                                   net (fanout=4)        0.141       3.635         CLKcount[0]      
+ CLMS_126_173/A4                                                           f       CLKcount[0]/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   3.635         Logic Levels: 0  
+                                                                                   Logic: 0.218ns(60.724%), Route: 0.141ns(39.276%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.796       3.934         ntclkbufg_0      
+ CLMS_126_173/CLK                                                          r       CLKcount[0]/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.658       3.276                          
+ clock uncertainty                                       0.000       3.276                          
+
+ Hold time                                              -0.081       3.195                          
+
+ Data required time                                                  3.195                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.195                          
+ Data arrival time                                                   3.635                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.440                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKin/opit_0_L5Q_perm/CLK
+Endpoint    : CLKin/opit_0_L5Q_perm/L4
+Path Group  : NHJSQ|exCLK
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.929
+  Launch Clock Delay      :  3.271
+  Clock Pessimism Removal :  -0.658
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916       0.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054       1.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754       1.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.482       3.271         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+
+ CLMS_126_177/Q0                   tco                   0.218       3.489 f       CLKin/opit_0_L5Q_perm/Q
+                                   net (fanout=2)        0.141       3.630         CLKin            
+ CLMS_126_177/A4                                                           f       CLKin/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   3.630         Logic Levels: 0  
+                                                                                   Logic: 0.218ns(60.724%), Route: 0.141ns(39.276%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.791       3.929         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.658       3.271                          
+ clock uncertainty                                       0.000       3.271                          
+
+ Hold time                                              -0.081       3.190                          
+
+ Data required time                                                  3.190                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.190                          
+ Data arrival time                                                   3.630                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.440                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[4]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[4]/opit_0_A2Q21/I01
+Path Group  : NHJSQ|exCLK
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.962
+  Launch Clock Delay      :  3.304
+  Clock Pessimism Removal :  -0.658
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.916       0.981 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.981         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.054       1.035 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.754       1.789         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.789 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.515       3.304         ntclkbufg_0      
+ CLMA_130_152/CLK                                                          r       CLKcount[4]/opit_0_A2Q21/CLK
+
+ CLMA_130_152/Q2                   tco                   0.218       3.522 f       CLKcount[4]/opit_0_A2Q21/Q0
+                                   net (fanout=2)        0.141       3.663         CLKcount[3]      
+ CLMA_130_152/C1                                                           f       CLKcount[4]/opit_0_A2Q21/I01
+
+ Data arrival time                                                   3.663         Logic Levels: 0  
+                                                                                   Logic: 0.218ns(60.724%), Route: 0.141ns(39.276%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.824       3.962         ntclkbufg_0      
+ CLMA_130_152/CLK                                                          r       CLKcount[4]/opit_0_A2Q21/CLK
+ clock pessimism                                        -0.658       3.304                          
+ clock uncertainty                                       0.000       3.304                          
+
+ Hold time                                              -0.166       3.138                          
+
+ Data required time                                                  3.138                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.138                          
+ Data arrival time                                                   3.663                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.525                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKin/opit_0_L5Q_perm/CLK
+Endpoint    : CLKout (port)
+Path Group  : **default**
+Path Type   : max (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    1.100       1.165 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.165         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.067       1.232 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.906       2.138         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       2.138 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.791       3.929         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+
+ CLMS_126_177/Q0                   tco                   0.261       4.190 r       CLKin/opit_0_L5Q_perm/Q
+                                   net (fanout=2)        0.483       4.673         CLKin            
+ CLMA_118_181/Y0                   td                    0.164       4.837 r       N9/gateop_perm/Z 
+                                   net (fanout=5)        0.886       5.723         nt_CLKout        
+ IOL_151_197/DO                    td                    0.128       5.851 r       CLKout_obuf/opit_1/O
+                                   net (fanout=1)        0.000       5.851         CLKout_obuf/ntO  
+ IOBS_152_197/PAD                  td                    2.141       7.992 r       CLKout_obuf/opit_0/O
+                                   net (fanout=1)        0.065       8.057         CLKout           
+ H17                                                                       r       CLKout (port)    
+
+ Data arrival time                                                   8.057         Logic Levels: 3  
+                                                                                   Logic: 2.694ns(65.262%), Route: 1.434ns(34.738%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKen (port)
+Endpoint    : CLKout (port)
+Path Group  : **default**
+Path Type   : min (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ K14                                                     0.000       0.000 f       CLKen (port)     
+                                   net (fanout=1)        0.038       0.038         nt_CLKen         
+ IOBD_152_202/DIN                  td                    0.999       1.037 f       CLKen/opit_0/O   
+                                   net (fanout=1)        0.000       1.037         CLKen/ntI        
+ IOL_151_202/RX_DATA_DD            td                    0.093       1.130 f       CLKen/opit_1/OUT 
+                                   net (fanout=1)        0.563       1.693         _N0              
+ CLMA_118_181/Y0                   td                    0.274       1.967 f       N9/gateop_perm/Z 
+                                   net (fanout=5)        0.624       2.591         nt_CLKout        
+ IOL_151_197/DO                    td                    0.100       2.691 f       CLKout_obuf/opit_1/O
+                                   net (fanout=1)        0.000       2.691         CLKout_obuf/ntO  
+ IOBS_152_197/PAD                  td                    1.904       4.595 f       CLKout_obuf/opit_0/O
+                                   net (fanout=1)        0.065       4.660         CLKout           
+ H17                                                                       f       CLKout (port)    
+
+ Data arrival time                                                   4.660         Logic Levels: 5  
+                                                                                   Logic: 3.370ns(72.318%), Route: 1.290ns(27.682%)
+====================================================================================================
+
+{NHJSQ|exCLK} Minimum Pulse Width :
+****************************************************************************************************
+ Slack       Actual Width    Require Width   Type              Location                Pin          
+----------------------------------------------------------------------------------------------------
+ 499.380     500.000         0.620           High Pulse Width  CLMS_126_173/CLK        CLKcount[0]/opit_0_L5Q_perm/CLK
+ 499.380     500.000         0.620           Low Pulse Width   CLMS_126_173/CLK        CLKcount[0]/opit_0_L5Q_perm/CLK
+ 499.380     500.000         0.620           High Pulse Width  CLMS_126_177/CLK        CLKin/opit_0_L5Q_perm/CLK
+====================================================================================================
+
+====================================================================================================
+Fast Corner
+****************************************************************************************************
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[22]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.040  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  2.608
+  Launch Clock Delay      :  3.064
+  Clock Pessimism Removal :  0.416
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.406       3.064         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.200       3.264 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.424       3.688         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.297       3.985 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.378       4.363         _N55             
+ CLMA_126_172/Y0                   td                    0.297       4.660 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.425       5.085         N42              
+ CLMA_130_152/RSCO                 td                    0.090       5.175 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.175         ntR4             
+ CLMA_130_156/RSCO                 td                    0.074       5.249 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.249         ntR3             
+ CLMA_130_160/RSCO                 td                    0.074       5.323 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.323         ntR2             
+ CLMA_130_164/RSCO                 td                    0.074       5.397 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.397         ntR1             
+ CLMA_130_168/RSCO                 td                    0.074       5.471 r       CLKcount[20]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.471         ntR0             
+ CLMA_130_172/RSCI                                                         r       CLKcount[22]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   5.471         Logic Levels: 7  
+                                                                                   Logic: 1.180ns(49.024%), Route: 1.227ns(50.976%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734    1000.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038    1000.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588    1001.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.183    1002.608         ntclkbufg_0      
+ CLMA_130_172/CLK                                                          r       CLKcount[22]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.416    1003.024                          
+ clock uncertainty                                      -0.050    1002.974                          
+
+ Setup time                                             -0.224    1002.750                          
+
+ Data required time                                               1002.750                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.750                          
+ Data arrival time                                                   5.471                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       997.279                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[24]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.040  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  2.608
+  Launch Clock Delay      :  3.064
+  Clock Pessimism Removal :  0.416
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.406       3.064         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.200       3.264 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.424       3.688         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.297       3.985 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.378       4.363         _N55             
+ CLMA_126_172/Y0                   td                    0.297       4.660 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.425       5.085         N42              
+ CLMA_130_152/RSCO                 td                    0.090       5.175 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.175         ntR4             
+ CLMA_130_156/RSCO                 td                    0.074       5.249 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.249         ntR3             
+ CLMA_130_160/RSCO                 td                    0.074       5.323 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.323         ntR2             
+ CLMA_130_164/RSCO                 td                    0.074       5.397 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.397         ntR1             
+ CLMA_130_168/RSCO                 td                    0.074       5.471 r       CLKcount[20]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.471         ntR0             
+ CLMA_130_172/RSCI                                                         r       CLKcount[24]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   5.471         Logic Levels: 7  
+                                                                                   Logic: 1.180ns(49.024%), Route: 1.227ns(50.976%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734    1000.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038    1000.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588    1001.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.183    1002.608         ntclkbufg_0      
+ CLMA_130_172/CLK                                                          r       CLKcount[24]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.416    1003.024                          
+ clock uncertainty                                      -0.050    1002.974                          
+
+ Setup time                                             -0.224    1002.750                          
+
+ Data required time                                               1002.750                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.750                          
+ Data arrival time                                                   5.471                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       997.279                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[12]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[18]/opit_0_A2Q21/RS
+Path Group  : NHJSQ|exCLK
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.035  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  2.613
+  Launch Clock Delay      :  3.064
+  Clock Pessimism Removal :  0.416
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.406       3.064         ntclkbufg_0      
+ CLMA_130_160/CLK                                                          r       CLKcount[12]/opit_0_A2Q21/CLK
+
+ CLMA_130_160/Q3                   tco                   0.200       3.264 r       CLKcount[12]/opit_0_A2Q21/Q1
+                                   net (fanout=2)        0.424       3.688         CLKcount[12]     
+ CLMS_126_169/Y0                   td                    0.297       3.985 r       N42_5/gateop_perm/Z
+                                   net (fanout=1)        0.378       4.363         _N55             
+ CLMA_126_172/Y0                   td                    0.297       4.660 r       N42_25/gateop_perm/Z
+                                   net (fanout=4)        0.425       5.085         N42              
+ CLMA_130_152/RSCO                 td                    0.090       5.175 r       CLKcount[4]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.175         ntR4             
+ CLMA_130_156/RSCO                 td                    0.074       5.249 r       CLKcount[8]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.249         ntR3             
+ CLMA_130_160/RSCO                 td                    0.074       5.323 r       CLKcount[12]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.323         ntR2             
+ CLMA_130_164/RSCO                 td                    0.074       5.397 r       CLKcount[16]/opit_0_A2Q21/RSOUT
+                                   net (fanout=2)        0.000       5.397         ntR1             
+ CLMA_130_168/RSCI                                                         r       CLKcount[18]/opit_0_A2Q21/RS
+
+ Data arrival time                                                   5.397         Logic Levels: 6  
+                                                                                   Logic: 1.106ns(47.407%), Route: 1.227ns(52.593%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                      1000.000    1000.000 r                        
+ U1                                                      0.000    1000.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065    1000.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734    1000.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038    1000.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588    1001.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000    1001.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.188    1002.613         ntclkbufg_0      
+ CLMA_130_168/CLK                                                          r       CLKcount[18]/opit_0_A2Q21/CLK
+ clock pessimism                                         0.416    1003.029                          
+ clock uncertainty                                      -0.050    1002.979                          
+
+ Setup time                                             -0.224    1002.755                          
+
+ Data required time                                               1002.755                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.755                          
+ Data arrival time                                                   5.397                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       997.358                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKin/opit_0_L5Q_perm/CLK
+Endpoint    : CLKin/opit_0_L5Q_perm/L4
+Path Group  : NHJSQ|exCLK
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.044
+  Launch Clock Delay      :  2.601
+  Clock Pessimism Removal :  -0.443
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734       0.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038       0.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588       1.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.176       2.601         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+
+ CLMS_126_177/Q0                   tco                   0.185       2.786 f       CLKin/opit_0_L5Q_perm/Q
+                                   net (fanout=2)        0.129       2.915         CLKin            
+ CLMS_126_177/A4                                                           f       CLKin/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   2.915         Logic Levels: 0  
+                                                                                   Logic: 0.185ns(58.917%), Route: 0.129ns(41.083%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.386       3.044         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.443       2.601                          
+ clock uncertainty                                       0.000       2.601                          
+
+ Hold time                                              -0.043       2.558                          
+
+ Data required time                                                  2.558                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  2.558                          
+ Data arrival time                                                   2.915                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.357                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[0]/opit_0_L5Q_perm/CLK
+Endpoint    : CLKcount[0]/opit_0_L5Q_perm/L4
+Path Group  : NHJSQ|exCLK
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.048
+  Launch Clock Delay      :  2.605
+  Clock Pessimism Removal :  -0.443
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734       0.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038       0.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588       1.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.180       2.605         ntclkbufg_0      
+ CLMS_126_173/CLK                                                          r       CLKcount[0]/opit_0_L5Q_perm/CLK
+
+ CLMS_126_173/Q0                   tco                   0.185       2.790 f       CLKcount[0]/opit_0_L5Q_perm/Q
+                                   net (fanout=4)        0.130       2.920         CLKcount[0]      
+ CLMS_126_173/A4                                                           f       CLKcount[0]/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   2.920         Logic Levels: 0  
+                                                                                   Logic: 0.185ns(58.730%), Route: 0.130ns(41.270%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.390       3.048         ntclkbufg_0      
+ CLMS_126_173/CLK                                                          r       CLKcount[0]/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.443       2.605                          
+ clock uncertainty                                       0.000       2.605                          
+
+ Hold time                                              -0.043       2.562                          
+
+ Data required time                                                  2.562                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  2.562                          
+ Data arrival time                                                   2.920                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.358                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKcount[4]/opit_0_A2Q21/CLK
+Endpoint    : CLKcount[4]/opit_0_A2Q21/I01
+Path Group  : NHJSQ|exCLK
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.073
+  Launch Clock Delay      :  2.630
+  Clock Pessimism Removal :  -0.443
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.734       0.799 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.799         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.038       0.837 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.588       1.425         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.425 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.205       2.630         ntclkbufg_0      
+ CLMA_130_152/CLK                                                          r       CLKcount[4]/opit_0_A2Q21/CLK
+
+ CLMA_130_152/Q2                   tco                   0.185       2.815 f       CLKcount[4]/opit_0_A2Q21/Q0
+                                   net (fanout=2)        0.129       2.944         CLKcount[3]      
+ CLMA_130_152/C1                                                           f       CLKcount[4]/opit_0_A2Q21/I01
+
+ Data arrival time                                                   2.944         Logic Levels: 0  
+                                                                                   Logic: 0.185ns(58.917%), Route: 0.129ns(41.083%)
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.415       3.073         ntclkbufg_0      
+ CLMA_130_152/CLK                                                          r       CLKcount[4]/opit_0_A2Q21/CLK
+ clock pessimism                                        -0.443       2.630                          
+ clock uncertainty                                       0.000       2.630                          
+
+ Hold time                                              -0.089       2.541                          
+
+ Data required time                                                  2.541                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  2.541                          
+ Data arrival time                                                   2.944                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.403                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKin/opit_0_L5Q_perm/CLK
+Endpoint    : CLKout (port)
+Path Group  : **default**
+Path Type   : max (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock NHJSQ|exCLK (rising edge)                         0.000       0.000 r                        
+ U1                                                      0.000       0.000 r       exCLK (port)     
+                                   net (fanout=1)        0.065       0.065         exCLK            
+ IOBD_0_74/DIN                     td                    0.859       0.924 r       exCLK_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.924         exCLK_ibuf/ntD   
+ IOL_7_74/INCK                     td                    0.045       0.969 r       exCLK_ibuf/opit_1/INCK
+                                   net (fanout=1)        0.689       1.658         _N1              
+ USCM_74_104/CLK_USCM              td                    0.000       1.658 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=14)       1.386       3.044         ntclkbufg_0      
+ CLMS_126_177/CLK                                                          r       CLKin/opit_0_L5Q_perm/CLK
+
+ CLMS_126_177/Q0                   tco                   0.198       3.242 f       CLKin/opit_0_L5Q_perm/Q
+                                   net (fanout=2)        0.334       3.576         CLKin            
+ CLMA_118_181/Y0                   td                    0.133       3.709 f       N9/gateop_perm/Z 
+                                   net (fanout=5)        0.655       4.364         nt_CLKout        
+ IOL_151_197/DO                    td                    0.078       4.442 f       CLKout_obuf/opit_1/O
+                                   net (fanout=1)        0.000       4.442         CLKout_obuf/ntO  
+ IOBS_152_197/PAD                  td                    1.886       6.328 f       CLKout_obuf/opit_0/O
+                                   net (fanout=1)        0.065       6.393         CLKout           
+ H17                                                                       f       CLKout (port)    
+
+ Data arrival time                                                   6.393         Logic Levels: 3  
+                                                                                   Logic: 2.295ns(68.528%), Route: 1.054ns(31.472%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : CLKen (port)
+Endpoint    : CLKout (port)
+Path Group  : **default**
+Path Type   : min (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ K14                                                     0.000       0.000 r       CLKen (port)     
+                                   net (fanout=1)        0.038       0.038         nt_CLKen         
+ IOBD_152_202/DIN                  td                    0.734       0.772 r       CLKen/opit_0/O   
+                                   net (fanout=1)        0.000       0.772         CLKen/ntI        
+ IOL_151_202/RX_DATA_DD            td                    0.066       0.838 r       CLKen/opit_1/OUT 
+                                   net (fanout=1)        0.559       1.397         _N0              
+ CLMA_118_181/Y0                   td                    0.244       1.641 r       N9/gateop_perm/Z 
+                                   net (fanout=5)        0.554       2.195         nt_CLKout        
+ IOL_151_197/DO                    td                    0.070       2.265 r       CLKout_obuf/opit_1/O
+                                   net (fanout=1)        0.000       2.265         CLKout_obuf/ntO  
+ IOBS_152_197/PAD                  td                    1.522       3.787 r       CLKout_obuf/opit_0/O
+                                   net (fanout=1)        0.065       3.852         CLKout           
+ H17                                                                       r       CLKout (port)    
+
+ Data arrival time                                                   3.852         Logic Levels: 5  
+                                                                                   Logic: 2.636ns(68.432%), Route: 1.216ns(31.568%)
+====================================================================================================
+
+{NHJSQ|exCLK} Minimum Pulse Width :
+****************************************************************************************************
+ Slack       Actual Width    Require Width   Type              Location                Pin          
+----------------------------------------------------------------------------------------------------
+ 499.700     500.000         0.300           High Pulse Width  CLMS_126_173/CLK        CLKcount[0]/opit_0_L5Q_perm/CLK
+ 499.700     500.000         0.300           Low Pulse Width   CLMS_126_173/CLK        CLKcount[0]/opit_0_L5Q_perm/CLK
+ 499.700     500.000         0.300           High Pulse Width  CLMA_130_152/CLK        CLKcount[2]/opit_0_A2Q21/CLK
+====================================================================================================
+
+====================================================================================================
+
+Inputs and Outputs :
++-------------------------------------------------------------------------------+
+| Type       | File Name                                                       
++-------------------------------------------------------------------------------+
+| Input      | C:/Users/r9000/project1/project/place_route/NHJSQ_pnr.adf       
+| Output     | C:/Users/r9000/project1/project/report_timing/NHJSQ_rtp.adf     
+|            | C:/Users/r9000/project1/project/report_timing/NHJSQ.rtr         
+|            | C:/Users/r9000/project1/project/report_timing/rtr.db            
++-------------------------------------------------------------------------------+
+
+
+Flow Command: report_timing 
+Peak memory: 856 MB
+Total CPU time to report_timing completion : 0h:0m:7s
+Process Total CPU time to report_timing completion : 0h:0m:7s
+Total real time to report_timing completion : 0h:0m:9s

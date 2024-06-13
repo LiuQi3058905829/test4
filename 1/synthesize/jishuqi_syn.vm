@@ -1,0 +1,1006 @@
+//
+// Generated (version 2022.2-SP1-Lite<build 132640>) at Wed Jun  5 17:57:48 2024
+//
+
+module gate74LS161
+(
+    input CLK,
+    output QA,
+    output QB,
+    output QC
+);
+    wire [4:0] N31;
+    wire QD;
+
+    GTP_LUT3 /* N31_ac2 */ #(
+            .INIT(8'b10000000))
+        N31_ac2 (
+            .Z (N31[3]),
+            .I0 (QA),
+            .I1 (QB),
+            .I2 (QC));
+	// LUT = I0&I1&I2 ;
+
+    GTP_LUT2 /* N31_sum1 */ #(
+            .INIT(4'b0110))
+        N31_sum1 (
+            .Z (N31[1]),
+            .I0 (QA),
+            .I1 (QB));
+	// LUT = (I0&~I1)|(~I0&I1) ;
+
+    GTP_LUT3 /* N31_sum2 */ #(
+            .INIT(8'b01111000))
+        N31_sum2 (
+            .Z (N31[2]),
+            .I0 (QA),
+            .I1 (QB),
+            .I2 (QC));
+	// LUT = (~I1&I2)|(~I0&I2)|(I0&I1&~I2) ;
+
+    GTP_DFF_C /* \Qtemp[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \Qtemp[0]  (
+            .Q (QA),
+            .C (QD),
+            .CLK (CLK),
+            .D (N31[0]));
+	// ../source/gate74LS161.v:8
+
+    GTP_DFF_C /* \Qtemp[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \Qtemp[1]  (
+            .Q (QB),
+            .C (QD),
+            .CLK (CLK),
+            .D (N31[1]));
+	// ../source/gate74LS161.v:8
+
+    GTP_DFF_C /* \Qtemp[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \Qtemp[2]  (
+            .Q (QC),
+            .C (QD),
+            .CLK (CLK),
+            .D (N31[2]));
+	// ../source/gate74LS161.v:8
+
+    GTP_LUT1 /* \Qtemp[3:0]_inv  */ #(
+            .INIT(2'b01))
+        \Qtemp[3:0]_inv  (
+            .Z (N31[0]),
+            .I0 (QA));
+	// LUT = ~I0 ;
+
+    GTP_DFF_C /* \Qtemp[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \Qtemp[3]  (
+            .Q (QD),
+            .C (QD),
+            .CLK (CLK),
+            .D (N31[3]));
+	// ../source/gate74LS161.v:8
+
+
+endmodule
+
+
+module jishuqi
+(
+    input clk,
+    input reset,
+    output [2:0] q
+);
+	// SDC constraint : (object clk) (id 1000) (clock jishuqi|clk) (inferred)
+    wire [26:0] CLKcount;
+    wire CLKin;
+    wire N11;
+    wire N23;
+    wire N36;
+    wire [26:0] N39;
+    wire _N15;
+    wire _N16;
+    wire _N17;
+    wire _N18;
+    wire _N19;
+    wire _N20;
+    wire _N21;
+    wire _N22;
+    wire _N23;
+    wire _N24;
+    wire _N25;
+    wire _N26;
+    wire _N27;
+    wire _N28;
+    wire _N29;
+    wire _N30;
+    wire _N31;
+    wire _N32;
+    wire _N33;
+    wire _N34;
+    wire _N35;
+    wire _N36;
+    wire _N37;
+    wire _N65;
+    wire _N69;
+    wire _N73;
+    wire _N77;
+    wire _N81;
+    wire nt_clk;
+    wire [2:0] nt_q;
+
+    GTP_DFF_R /* \CLKcount[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[0]  (
+            .Q (CLKcount[0]),
+            .CLK (nt_clk),
+            .D (N23),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[1]  (
+            .Q (CLKcount[1]),
+            .CLK (nt_clk),
+            .D (N39[1]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[2]  (
+            .Q (CLKcount[2]),
+            .CLK (nt_clk),
+            .D (N39[2]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[3]  (
+            .Q (CLKcount[3]),
+            .CLK (nt_clk),
+            .D (N39[3]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[4]  (
+            .Q (CLKcount[4]),
+            .CLK (nt_clk),
+            .D (N39[4]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[5]  (
+            .Q (CLKcount[5]),
+            .CLK (nt_clk),
+            .D (N39[5]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[6]  (
+            .Q (CLKcount[6]),
+            .CLK (nt_clk),
+            .D (N39[6]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[7]  (
+            .Q (CLKcount[7]),
+            .CLK (nt_clk),
+            .D (N39[7]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[8]  (
+            .Q (CLKcount[8]),
+            .CLK (nt_clk),
+            .D (N39[8]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[9]  (
+            .Q (CLKcount[9]),
+            .CLK (nt_clk),
+            .D (N39[9]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[10]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[10]  (
+            .Q (CLKcount[10]),
+            .CLK (nt_clk),
+            .D (N39[10]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[11]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[11]  (
+            .Q (CLKcount[11]),
+            .CLK (nt_clk),
+            .D (N39[11]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[12]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[12]  (
+            .Q (CLKcount[12]),
+            .CLK (nt_clk),
+            .D (N39[12]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[13]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[13]  (
+            .Q (CLKcount[13]),
+            .CLK (nt_clk),
+            .D (N39[13]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[14]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[14]  (
+            .Q (CLKcount[14]),
+            .CLK (nt_clk),
+            .D (N39[14]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[15]  (
+            .Q (CLKcount[15]),
+            .CLK (nt_clk),
+            .D (N39[15]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[16]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[16]  (
+            .Q (CLKcount[16]),
+            .CLK (nt_clk),
+            .D (N39[16]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[17]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[17]  (
+            .Q (CLKcount[17]),
+            .CLK (nt_clk),
+            .D (N39[17]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[18]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[18]  (
+            .Q (CLKcount[18]),
+            .CLK (nt_clk),
+            .D (N39[18]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[19]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[19]  (
+            .Q (CLKcount[19]),
+            .CLK (nt_clk),
+            .D (N39[19]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[20]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[20]  (
+            .Q (CLKcount[20]),
+            .CLK (nt_clk),
+            .D (N39[20]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[21]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[21]  (
+            .Q (CLKcount[21]),
+            .CLK (nt_clk),
+            .D (N39[21]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[22]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[22]  (
+            .Q (CLKcount[22]),
+            .CLK (nt_clk),
+            .D (N39[22]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[23]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[23]  (
+            .Q (CLKcount[23]),
+            .CLK (nt_clk),
+            .D (N39[23]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_R /* \CLKcount[24]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \CLKcount[24]  (
+            .Q (CLKcount[24]),
+            .CLK (nt_clk),
+            .D (N39[24]),
+            .R (N36));
+	// ../source/jishuqi.v:13
+
+    GTP_DFF_E /* CLKin */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        CLKin_vname (
+            .Q (CLKin),
+            .CE (N36),
+            .CLK (nt_clk),
+            .D (N11));
+    // defparam CLKin_vname.orig_name = CLKin;
+	// ../source/jishuqi.v:13
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+    GTP_LUT1 /* N11 */ #(
+            .INIT(2'b01))
+        N11_vname (
+            .Z (N11),
+            .I0 (CLKin));
+    // defparam N11_vname.orig_name = N11;
+	// LUT = ~I0 ;
+
+    GTP_LUT5CARRY /* N14_0_1 */ #(
+            .INIT(32'b01100110011001100000000000000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("FALSE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_1 (
+            .COUT (_N15),
+            .Z (N39[1]),
+            .CIN (),
+            .I0 (CLKcount[0]),
+            .I1 (CLKcount[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b1),
+            .ID ());
+	// LUT = I1^I0 ;
+	// CARRY = (1'b0) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_2 */ #(
+            .INIT(32'b01111000011110001000000010000000), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("FALSE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_2 (
+            .COUT (_N16),
+            .Z (N39[2]),
+            .CIN (_N15),
+            .I0 (CLKcount[0]),
+            .I1 (CLKcount[1]),
+            .I2 (CLKcount[2]),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = (I0&I1&~I2)|(~I1&I2)|(~I0&I2) ;
+	// CARRY = (I0&I1&I2) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_3 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_3 (
+            .COUT (_N17),
+            .Z (N39[3]),
+            .CIN (_N16),
+            .I0 (),
+            .I1 (CLKcount[3]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_4 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_4 (
+            .COUT (_N18),
+            .Z (N39[4]),
+            .CIN (_N17),
+            .I0 (),
+            .I1 (CLKcount[4]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_5 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_5 (
+            .COUT (_N19),
+            .Z (N39[5]),
+            .CIN (_N18),
+            .I0 (),
+            .I1 (CLKcount[5]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_6 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_6 (
+            .COUT (_N20),
+            .Z (N39[6]),
+            .CIN (_N19),
+            .I0 (),
+            .I1 (CLKcount[6]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_7 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_7 (
+            .COUT (_N21),
+            .Z (N39[7]),
+            .CIN (_N20),
+            .I0 (),
+            .I1 (CLKcount[7]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_8 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_8 (
+            .COUT (_N22),
+            .Z (N39[8]),
+            .CIN (_N21),
+            .I0 (),
+            .I1 (CLKcount[8]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_9 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_9 (
+            .COUT (_N23),
+            .Z (N39[9]),
+            .CIN (_N22),
+            .I0 (),
+            .I1 (CLKcount[9]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_10 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_10 (
+            .COUT (_N24),
+            .Z (N39[10]),
+            .CIN (_N23),
+            .I0 (),
+            .I1 (CLKcount[10]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_11 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_11 (
+            .COUT (_N25),
+            .Z (N39[11]),
+            .CIN (_N24),
+            .I0 (),
+            .I1 (CLKcount[11]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_12 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_12 (
+            .COUT (_N26),
+            .Z (N39[12]),
+            .CIN (_N25),
+            .I0 (),
+            .I1 (CLKcount[12]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_13 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_13 (
+            .COUT (_N27),
+            .Z (N39[13]),
+            .CIN (_N26),
+            .I0 (),
+            .I1 (CLKcount[13]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_14 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_14 (
+            .COUT (_N28),
+            .Z (N39[14]),
+            .CIN (_N27),
+            .I0 (),
+            .I1 (CLKcount[14]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_15 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_15 (
+            .COUT (_N29),
+            .Z (N39[15]),
+            .CIN (_N28),
+            .I0 (),
+            .I1 (CLKcount[15]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_16 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_16 (
+            .COUT (_N30),
+            .Z (N39[16]),
+            .CIN (_N29),
+            .I0 (),
+            .I1 (CLKcount[16]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_17 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_17 (
+            .COUT (_N31),
+            .Z (N39[17]),
+            .CIN (_N30),
+            .I0 (),
+            .I1 (CLKcount[17]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_18 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_18 (
+            .COUT (_N32),
+            .Z (N39[18]),
+            .CIN (_N31),
+            .I0 (),
+            .I1 (CLKcount[18]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_19 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_19 (
+            .COUT (_N33),
+            .Z (N39[19]),
+            .CIN (_N32),
+            .I0 (),
+            .I1 (CLKcount[19]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_20 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_20 (
+            .COUT (_N34),
+            .Z (N39[20]),
+            .CIN (_N33),
+            .I0 (),
+            .I1 (CLKcount[20]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_21 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_21 (
+            .COUT (_N35),
+            .Z (N39[21]),
+            .CIN (_N34),
+            .I0 (),
+            .I1 (CLKcount[21]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_22 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_22 (
+            .COUT (_N36),
+            .Z (N39[22]),
+            .CIN (_N35),
+            .I0 (),
+            .I1 (CLKcount[22]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_23 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_23 (
+            .COUT (_N37),
+            .Z (N39[23]),
+            .CIN (_N36),
+            .I0 (),
+            .I1 (CLKcount[23]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT5CARRY /* N14_0_24 */ #(
+            .INIT(32'b01100110011001101100110011001100), 
+            .ID_TO_LUT("FALSE"), 
+            .CIN_TO_LUT("TRUE"), 
+            .I4_TO_CARRY("TRUE"), 
+            .I4_TO_LUT("FALSE"))
+        N14_0_24 (
+            .COUT (),
+            .Z (N39[24]),
+            .CIN (_N37),
+            .I0 (),
+            .I1 (CLKcount[24]),
+            .I2 (),
+            .I3 (),
+            .I4 (1'b0),
+            .ID ());
+	// LUT = I1^CIN ;
+	// CARRY = (I1) ? CIN : (I4) ;
+	// ../source/jishuqi.v:22
+
+    GTP_LUT1 /* N23 */ #(
+            .INIT(2'b01))
+        N23_vname (
+            .Z (N23),
+            .I0 (CLKcount[0]));
+    // defparam N23_vname.orig_name = N23;
+	// LUT = ~I0 ;
+
+    GTP_LUT5 /* N36_5 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N36_5 (
+            .Z (_N65),
+            .I0 (CLKcount[6]),
+            .I1 (CLKcount[7]),
+            .I2 (CLKcount[10]),
+            .I3 (CLKcount[11]),
+            .I4 (CLKcount[12]));
+	// LUT = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT5 /* N36_9 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N36_9 (
+            .Z (_N69),
+            .I0 (CLKcount[13]),
+            .I1 (CLKcount[14]),
+            .I2 (CLKcount[15]),
+            .I3 (CLKcount[16]),
+            .I4 (CLKcount[17]));
+	// LUT = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT5 /* N36_13 */ #(
+            .INIT(32'b01000000000000000000000000000000))
+        N36_13 (
+            .Z (_N73),
+            .I0 (CLKcount[1]),
+            .I1 (CLKcount[19]),
+            .I2 (CLKcount[20]),
+            .I3 (CLKcount[23]),
+            .I4 (CLKcount[24]));
+	// LUT = ~I0&I1&I2&I3&I4 ;
+
+    GTP_LUT5 /* N36_17 */ #(
+            .INIT(32'b00000000000000000000000000000001))
+        N36_17 (
+            .Z (_N77),
+            .I0 (CLKcount[2]),
+            .I1 (CLKcount[3]),
+            .I2 (CLKcount[4]),
+            .I3 (CLKcount[5]),
+            .I4 (CLKcount[8]));
+	// LUT = ~I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT5 /* N36_21 */ #(
+            .INIT(32'b00000000000000000000000000000001))
+        N36_21 (
+            .Z (_N81),
+            .I0 (CLKcount[0]),
+            .I1 (CLKcount[9]),
+            .I2 (CLKcount[18]),
+            .I3 (CLKcount[21]),
+            .I4 (CLKcount[22]));
+	// LUT = ~I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT5 /* N36_25 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N36_25 (
+            .Z (N36),
+            .I0 (_N65),
+            .I1 (_N69),
+            .I2 (_N73),
+            .I3 (_N77),
+            .I4 (_N81));
+	// LUT = I0&I1&I2&I3&I4 ;
+
+    gate74LS161 U1 (
+            .QA (nt_q[0]),
+            .QB (nt_q[1]),
+            .QC (nt_q[2]),
+            .CLK (CLKin));
+	// ../source/jishuqi.v:8
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_NONE="TRUE" *)    GTP_INBUF /* clk_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        clk_ibuf (
+            .O (nt_clk),
+            .I (clk));
+	// ../source/jishuqi.v:2
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="N15", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* \q_obuf[0]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \q_obuf[0]  (
+            .O (q[0]),
+            .I (nt_q[0]));
+	// ../source/jishuqi.v:4
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* \q_obuf[1]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \q_obuf[1]  (
+            .O (q[1]),
+            .I (nt_q[1]));
+	// ../source/jishuqi.v:4
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J16", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_NONE="TRUE", PAP_IO_SLEW="SLOW" *)    GTP_OUTBUF /* \q_obuf[2]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \q_obuf[2]  (
+            .O (q[2]),
+            .I (nt_q[2]));
+	// ../source/jishuqi.v:4
+
+
+endmodule
+

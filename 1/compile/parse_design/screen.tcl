@@ -1,0 +1,1 @@
+.rtl_screen -top_module {jishuqi} -include_path {<C:/Users/r9000/project/project>} -design_files {<C:/Users/r9000/project/project/source/jishuqi.v|work><C:/Users/r9000/project/project/source/gate74LS161.v|work>}
